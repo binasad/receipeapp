@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "recipe-1",
+      "description": "A delicious pasta dish",
+      "imageUrl": "https://images.unsplash.com/photo-1722938687772-62a0dbfacc25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGFzdGElMjBkaXNofGVufDB8fHx8MTc2MDczMjEyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pasta dish"
+    },
+    {
+      "id": "recipe-2",
+      "description": "A hearty soup",
+      "imageUrl": "https://images.unsplash.com/photo-1620256114757-322387444c16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzb3VwJTIwYm93bHxlbnwwfHx8fDE3NjA3NDE1MjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "soup bowl"
+    },
+    {
+      "id": "recipe-3",
+      "description": "A fresh salad",
+      "imageUrl": "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWxhZCUyMGJvd2x8ZW58MHx8fHwxNzYwNzMxMzIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "salad bowl"
+    },
+    {
+      "id": "recipe-4",
+      "description": "A roasted chicken",
+      "imageUrl": "https://images.unsplash.com/photo-1606728035253-49e8a23146de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyb2FzdGVkJTIwY2hpY2tlbnxlbnwwfHx8fDE3NjA3NDE1MjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "roasted chicken"
+    },
+    {
+      "id": "recipe-5",
+      "description": "A stack of pancakes",
+      "imageUrl": "https://images.unsplash.com/photo-1736013061975-163957935b1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwYW5jYWtlcyUyMGJyZWFrZmFzdHxlbnwwfHx8fDE3NjA3Mzc3MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pancakes breakfast"
+    },
+    {
+      "id": "recipe-6",
+      "description": "A homemade pizza",
+      "imageUrl": "https://images.unsplash.com/photo-1692812472060-c15ca30af036?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwaXp6YSUyMGhvbWVtYWRlfGVufDB8fHx8MTc2MDc4MTgwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pizza homemade"
+    }
+  ]
 }
