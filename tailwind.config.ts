@@ -10,10 +10,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['DM Sans', 'system-ui', 'sans-serif'],
-        headline: ['Playfair Display', 'Georgia', 'serif'],
-        display: ['Playfair Display', 'Georgia', 'serif'],
-        code: ['monospace'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
+        headline: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        display: ['Outfit', 'system-ui', 'sans-serif'],
+        accent: ['DM Sans', 'system-ui', 'sans-serif'],
+        code: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',

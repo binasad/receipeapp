@@ -44,9 +44,9 @@ export default function IngredientManager({
       <CardHeader>
         <div className="flex items-center gap-3">
           <ShoppingBasket className="h-6 w-6 text-primary" />
-          <CardTitle className="font-headline">Your Ingredients</CardTitle>
+          <CardTitle className="font-display text-2xl md:text-3xl font-bold tracking-tight">Your Ingredients</CardTitle>
         </div>
-        <CardDescription>
+        <CardDescription className="font-body text-base md:text-lg text-muted-foreground">
           Add the ingredients you have on hand, then generate recipes!
         </CardDescription>
       </CardHeader>
@@ -56,7 +56,7 @@ export default function IngredientManager({
             value={newIngredient}
             onChange={(e) => setNewIngredient(e.target.value)}
             placeholder="e.g., Chicken breast, eggs..."
-            className="flex-grow"
+            className="flex-grow font-body text-base md:text-lg placeholder:text-muted-foreground/70"
           />
           <Button type="submit">Add</Button>
         </form>
@@ -71,24 +71,24 @@ export default function IngredientManager({
         </div>
         <div className="flex flex-wrap gap-2 min-h-[40px] mb-6">
           {filteredIngredients.map((ingredient) => (
-            <Badge key={ingredient} variant="secondary" className="text-sm py-1 pl-3 pr-1">
+            <Badge key={ingredient} variant="secondary" className="font-accent text-base py-1.5 pl-4 pr-2">
               {ingredient}
               <button
                 onClick={() => handleRemoveIngredient(ingredient)}
                 className="ml-2 rounded-full p-0.5 hover:bg-muted-foreground/20"
                 aria-label={`Remove ${ingredient}`}
               >
-                <X className="h-3 w-3" />
+                <X className="h-3.5 w-3.5" />
               </button>
             </Badge>
           ))}
         </div>
-        <Button onClick={onGenerate} disabled={isLoading || ingredients.length === 0} size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+        <Button onClick={onGenerate} disabled={isLoading || ingredients.length === 0} size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-accent text-lg font-semibold tracking-wide py-6">
           {isLoading ? (
             'Generating...'
           ) : (
             <>
-              <Sparkles className="mr-2 h-4 w-4" />
+              <Sparkles className="mr-2 h-5 w-5" />
               Generate Recipes
             </>
           )}

@@ -1,6 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900&display=swap');
+
+/* Direct font application - works in both dev and production */
+* {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+}
+
+.font-display, .recipe-title, .recipe-card-title {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+}
+
+.font-accent, .category-header, .nav-text, .ingredient-tag, .btn-primary, .btn-secondary {
+  font-family: 'DM Sans', system-ui, sans-serif !important;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Hide Next.js development mode indicator - COMPLETE HIDING */
+#__next-build-watcher,
+[data-nextjs-dialog-overlay],
+[data-nextjs-toast],
+[data-nextjs-dialog],
+[data-nextjs-overlay],
+div[style*="position: fixed"][style*="bottom"][style*="left"],
+div[style*="position: fixed"][style*="z-index: 9999"],
+div[style*="position: fixed"][style*="bottom: 0"],
+div[style*="position: fixed"][style*="left: 0"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+}
 
 /* Base font styles */
 @layer base {
@@ -9,19 +47,92 @@
   }
 
   h1 {
-    @apply text-4xl md:text-5xl font-bold tracking-tight;
+    @apply text-5xl md:text-7xl font-bold tracking-tight leading-tight;
+    letter-spacing: -0.04em;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
   h2 {
-    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+    @apply text-4xl md:text-6xl font-semibold tracking-tight leading-tight;
+    letter-spacing: -0.03em;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
   h3 {
-    @apply text-2xl md:text-3xl font-semibold;
+    @apply text-3xl md:text-5xl font-medium leading-snug;
+    letter-spacing: -0.02em;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
   body {
-    @apply font-body text-base leading-relaxed;
+    @apply font-body text-lg md:text-xl leading-relaxed;
+    letter-spacing: -0.01em;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Recipe title styles */
+  .recipe-title {
+    @apply font-display text-3xl md:text-5xl font-bold tracking-tight;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Recipe card title */
+  .recipe-card-title {
+    @apply font-display text-2xl md:text-3xl font-semibold;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Category headers */
+  .category-header {
+    @apply font-accent text-xl md:text-2xl font-semibold uppercase tracking-wider;
+    letter-spacing: 0.08em;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Navigation and UI elements */
+  .nav-text {
+    @apply font-accent text-base font-medium tracking-wide;
+    letter-spacing: 0.03em;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Ingredient tags */
+  .ingredient-tag {
+    @apply font-accent text-base font-medium;
+    letter-spacing: 0.02em;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Primary buttons */
+  .btn-primary {
+    @apply font-accent text-lg font-semibold tracking-wide;
+    letter-spacing: 0.03em;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Secondary buttons */
+  .btn-secondary {
+    @apply font-accent text-base font-medium tracking-normal;
+    letter-spacing: 0.02em;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Recipe metadata (time, servings, etc) */
+  .recipe-meta {
+    @apply font-body text-base font-medium;
+    letter-spacing: 0.01em;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Instructions and ingredients text */
+  .recipe-text {
+    @apply font-body text-lg md:text-xl leading-relaxed;
+    letter-spacing: -0.01em;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 }
 
@@ -103,5 +214,42 @@
   }
   body {
     @apply bg-background text-foreground;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Force font families with !important to override any conflicts */
+  .font-body, body, p, span, div, input, textarea, button, label {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-optical-sizing: auto;
+    font-variation-settings: 'wght' 400;
+  }
+  
+  .font-headline, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif !important;
+    font-optical-sizing: auto;
+    font-variation-settings: 'wght' 500;
+  }
+  
+  .font-display, .recipe-title, .recipe-card-title {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-optical-sizing: auto;
+    font-variation-settings: 'wght' 600;
+  }
+  
+  .font-accent, .category-header, .nav-text, .ingredient-tag, .btn-primary, .btn-secondary {
+    font-family: 'DM Sans', system-ui, sans-serif !important;
+    font-optical-sizing: auto;
+    font-variation-settings: 'wght' 500;
+  }
+  
+  /* Additional specific overrides for common elements */
+  * {
+    font-family: inherit;
+  }
+  
+  html {
+    font-family: 'Inter', system-ui, sans-serif !important;
   }
 }

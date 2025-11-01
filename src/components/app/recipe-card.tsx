@@ -27,7 +27,17 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
   const [image, setImage] = useState<ImagePlaceholder | null>(null);
 
   useEffect(() => {
-    // Select a random image on the client to avoid hydration mismatch
+    // Prefer an image included on the recipe (server-provided). If none, select a random placeholder on the client to avoid hydration mismatch.
+    if ((recipe as any).imageUrl) {
+      setImage({
+        id: `${recipe.name}-generated`,
+        description: recipe.name,
+        imageUrl: (recipe as any).imageUrl,
+        imageHint: (recipe as any).imageHint || recipe.name,
+      });
+      return;
+    }
+
     setImage(PlaceHolderImages[Math.floor(Math.random() * PlaceHolderImages.length)]);
   }, []);
 
